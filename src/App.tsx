@@ -162,8 +162,8 @@ class App extends React.Component<any, any> {
 
   public walletConnectInit = async () => {
     // bridge url
-    // const bridge = "https://bridge.walletconnect.org";
-    const bridge = 'http://192.168.3.13:5001'
+    const bridge = "https://bridge.walletconnect.org";
+    // const bridge = 'http://192.168.3.13:5001'
 
     // create new connector
     const connector = new WalletConnect({ bridge, qrcodeModal: QRCodeModal });
@@ -295,7 +295,10 @@ class App extends React.Component<any, any> {
     const from = address;
 
     // to
+    // RIF Mainnet Contract Address
     const to = '0x2aCc95758f8b5F583470bA265Eb685a8f45fC9D5';
+
+    // RIF Testnet Contract Address
     // const to = '0x015028643c5d0F318dbb10D6Cb0bfcBc25E8509c'
 
     // nonce
@@ -329,7 +332,7 @@ class App extends React.Component<any, any> {
       from,
       to,
       nonce,
-      gasPrice: 1190000000 || gasPrice,
+      gasPrice,
       gasLimit,
       value,
       data,
